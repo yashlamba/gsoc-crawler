@@ -16,5 +16,6 @@ class GsocSpider(scrapy.Spider):
         yield {
             'name': response.css('h3.banner__title::text').extract_first(),
             'website': response.css('a.org__link::attr(href)').extract_first(),
+            'Idea_List': response.css('main > section > div > div > div > md-card > div > div > md-button::attr(href)').extract()[0]
         }
 
